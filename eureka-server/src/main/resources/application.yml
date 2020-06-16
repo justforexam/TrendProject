@@ -1,0 +1,17 @@
+#配置文件，提供 eureka 的相关信息。
+eureka:
+  instance:
+    hostname: localhost
+  client:
+#   是否注册到服务器
+    registerWithEureka: false
+#    是否获取服务器的注册信息
+    fetchRegistry: false
+    serviceUrl:
+#      自己作为服务器，公布出来的地址
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+spring:
+  application:
+#    微服务本身的名称
+    name: eureka-server
